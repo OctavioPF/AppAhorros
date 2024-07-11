@@ -1,0 +1,45 @@
+# Query: -2022
+# ContextLines: 1
+
+10 resultados - 1 archivo
+
+ahorro-app\src\components\HelloWorld.vue:
+   57            amount: 100,
+   58:           time: new Date("02-01-2024"),
+   59          },
+
+   64            amount: 200,
+   65:           time: new Date("02-01-2022"),
+   66          },
+
+   71            amount: 500,
+   72:           time: new Date("02-01-2022"),
+   73          },
+
+   78            amount: 200,
+   79:           time: new Date("02-01-2022"),
+   80          },
+
+   85            amount: -400
+   86:           time: new Date("02-01-2022"),
+   87          },
+
+   92            amount: -600,
+   93:           time: new Date("02-01-2022"),
+   94          },
+
+   99            amount: -300,
+  100:           time: new Date("02-01-2022"),
+  101          },
+
+  106            amount: 100,
+  107:           time: new Date("02-01-2022"),
+  108          },
+
+  113            amount: 300,
+  114:           time: new Date("01-01-2022"),
+  115          },
+
+  120            amount: 500,
+  121:           time: new Date("01-01-2022"),
+  122          },

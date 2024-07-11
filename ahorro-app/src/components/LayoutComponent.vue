@@ -41,13 +41,14 @@ const showMovements = ref(false);
 }
 .movements {
   z-index: 1;
-  position: absolute;
-  flex-direction: column;
-  bottom: 0;
-  width: 100vw;
-  background-color: white;
-  box-shadow: 0 -8px 16px #e5e5e5;
-  border-radius: 24px;
+    position: absolute;
+    flex-direction: column;
+    bottom: 0;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 -8px 16px #e5e5e5;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
 }
 .movements .head {
   display: flex;

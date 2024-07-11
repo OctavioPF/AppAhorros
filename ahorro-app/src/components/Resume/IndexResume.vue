@@ -1,6 +1,6 @@
 <template>
   <main>
-    <p>{{ labelVisual }}</p>
+    <p class="text">{{ labelVisual }}</p>
     <h1> {{ amountCurrency}}</h1>
     <div class="graphic">
       <slot name="graphic"></slot>
@@ -50,6 +50,11 @@ computed: {
 
 </script>
 <style scoped>
+.text{
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--brand-blue);
+  text-shadow: 2px 2px 4px rgb(0 0 0);}
 
 main {
   display: flex;
@@ -68,7 +73,7 @@ h1 {
   color: var(--brand-green);
 }
 .graphic {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 100%;

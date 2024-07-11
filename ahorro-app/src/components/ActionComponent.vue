@@ -1,13 +1,68 @@
 <template>
-    <teleport to='' />
+    <button @click="showModal = true">Agregar movimiento</button>
+    <teleport to="#app">
+        <ModalForm v-show="showModal" @close="showModal = false">
+            <form @submit.prevent="submit">
+                <div class="field">
+                    <label>Título</label>
+                    <input type="text" v-model="title" />
+                </div>
+                <div class="field">
+                    <label>Monto</label>
+                    <input type="number" v-model="amount" />
+                </div>
+                <div class="field">
+                    <label>Descripción</label>
+                    <textarea rows="4" v-model="description"></textarea>
+                </div>
+                <div class="field">
+                    <label class="radio-label">
+                        <input type="radio" v-model="movementType" value="Ingreso" />
+                        <span>Ingreso</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" v-model="movementType" value="Gasto" />
+                        <span>Gasto</span>
+                    </label>
+                </div>
+                <div class="action">
+                    <button>Agregar movimiento</button>
+                </div>
+            </form>
+        </ModalForm>
+    </teleport>
 </template>
 
+<script setup>
+import { ref, defineEmits } from "vue";
+import ModalForm from "./ModalForm.vue";
 
+const showModal = ref(false);
+const title = ref("");
+const amount = ref(0);
+const description = ref("");
+const movementType = ref("Ingreso");
 
+const emit = defineEmits(["create"]);
 
-
+const submit = () => {
+  showModal.value = !showModal.value;
+  emit("create", {
+    title: title.value,
+    description: description.value,
+    amount: movementType.value === "Ingreso" ? amount.value : -amount.value,
+    time: new Date(),
+    id: new Date(),
+  });
+  title.value = "";
+  description.value = "";
+  amount.value = 0;
+  movementType.value = "Ingreso";
+};
+</script>
 
 <style scoped>
+
 button {
   color: white;
   font-size: 1.25rem;
@@ -17,6 +72,11 @@ button {
   padding: 24px 60px;
   border-radius: 60px;
   box-sizing: border-box;
+  margin-top: 30%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+
 }
 
 form {
@@ -75,6 +135,3 @@ input[type="radio"]:checked {
   background-color: var(--brand-blue);
 }
 </style>
-
-
-

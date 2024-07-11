@@ -15,7 +15,7 @@
         </div>
 </template>
 <script setup>
-import { toRefs, defineProps } from "vue";
+import { toRefs, defineProps,defineEmits } from "vue";
 import ContentM from "./ContentM.vue";
 
 const props = defineProps({
@@ -27,8 +27,10 @@ const props = defineProps({
 
 const { movements } = toRefs(props);
 
+const emit = defineEmits(["remove"]);
+
 const remove = (id) => {
-  console.log("remove", id)
+emit("remove", id)
 }
 </script>
 <style scoped>
@@ -41,6 +43,8 @@ const remove = (id) => {
 .title {
   margin: 8px 16px 24px 16px;
   color: var(--brand-blue);
+  text-shadow: 2px 2px 4px rgb(189 189 189 / 50%);
+
 }
 
 .content {

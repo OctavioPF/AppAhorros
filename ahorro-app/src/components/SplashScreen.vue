@@ -22,4 +22,9 @@ h1 {
 h1 span {
   color: var(--brand-green);
 }
+img{
+  transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.5);
+    border-radius: 117px;
+}
 </style>

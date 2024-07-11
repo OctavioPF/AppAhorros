@@ -49,7 +49,7 @@ const amountCurrency = computed(() => currencyFormatter.format(amount.value));
 
 const isNegative = computed(() => amount.value < 0)
 const emit = defineEmits(["remove"])
-
+ 
 const remove = () => {
   emit("remove",id.value);
 }
